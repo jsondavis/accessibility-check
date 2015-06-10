@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .row
+    .col-xs-12
+      form(method='POST')
+        .form-group
+          label(for='site_url') Site URL:
+            input(type='text', name='site_url', placeholder=' http://....')
+        .form-group
+          label(for='scrape_elem') Element selector to scrape for more URLs
+            input(type='text', name='scrape_elem', placeholder=' #elem or .elem')
+        button.btn.btn-primary(type='submit') Submit
+
+  .row.reportrow(ng-controller='reportListCtrl')
+    .col-xs-12

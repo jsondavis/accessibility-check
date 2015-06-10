@@ -1,0 +1,38 @@
+{
+  "name": "access-check",
+  "version": "0.0.1",
+  "description": "Accessibility scraper / checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jason-s-davis/access-check.git"
+  },
+  "keywords": [
+    "WCAG",
+    "accessibility",
+    "standards"
+  ],
+  "author": "Jason Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jason-s-davis/access-check/issues"
+  },
+  "homepage": "https://github.com/jason-s-davis/access-check",
+  "devDependencies": {
+    "access-sniff": "^1.1.2",
+    "body-parser": "^1.5.2",
+    "cheerio": "^0.19.0",
+    "errorhandler": "^1.1.1",
+    "express": "^4.12.4",
+    "express-session": "^1.7.2",
+    "jade": "^1.10.0",
+    "method-override": "^2.1.2",
+    "morgan": "^1.2.2",
+    "multer": "^0.1.3",
+    "request": "^2.57.0",
+    "serve-favicon": "^2.0.1"
+  }
+}

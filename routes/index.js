@@ -12,7 +12,11 @@ var accessOpts = {
 
 
 function scrape(url, elem) {
-    var url = 'http://' + url;
+    if (url === '') {
+        return {};
+    } else if (url.indexOf('http://') === -1) {
+        var url = 'http://' + url;
+    }
     // request(url, function(error, response, html) {
     //     if (!error) {
     //         var $ = cheerio.load(html);

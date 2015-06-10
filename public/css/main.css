@@ -1,3 +1,27 @@
 body {
-    padding-top: 65px;
+    font-size: 14px;
+    padding-top: 5em;
+}
+
+.reports {
+    padding-top: 5em;
+}
+
+.report-name ,
+.report-name:active ,
+.report-name:focus ,
+.report-name:hover ,
+.report-name:visited {
+    font-weight:700;
+    color: #555;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.report-name:hover {
+    color: #888;
+}
+
+.issues li {
+    list-style-type: none;
 }

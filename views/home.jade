@@ -7,10 +7,17 @@ block content
         .form-group
           label(for='site_url') Site URL:
             input(type='text', name='site_url', placeholder=' http://....')
-        .form-group
-          label(for='scrape_elem') Element selector to scrape for more URLs
-            input(type='text', name='scrape_elem', placeholder=' #elem or .elem')
         button.btn.btn-primary(type='submit') Submit
 
-  .row.reportrow(ng-controller='reportListCtrl')
-    .col-xs-12
+  section#angular-reports.reports(ng-controller='reportListCtrl')
+    .row(ng-repeat='report in reports track by $index')
+      .col-xs-12(ng-controller="reportCtrl")
+        a.report-name.center(href='', href-data='reports/{{report.name}}', ng-click='showreport(report)')
+          | {{report.name.replace('.json', '')}}
+      .col-xs-12(ng-class="{hidden: !report.selected}")
+        ul.issues
+          li.alert(ng-repeat='issue in report.reportData track by $index' ng-class='{"alert-danger": issue.heading === "ERROR", "alert-warning": issue.heading !== "ERROR"}' ng-init='issue.hidden = true;' ng-click='issue.hidden = !issue.hidden;')
+            span.heading {{issue.heading}} -
+            span.description {{issue.description}}
+            p.issue-element.well(ng-class='{hidden: issue.hidden}') {{issue.element.node}}
+

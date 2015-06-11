@@ -1,0 +1,6 @@
+li.alert.alert-dismissible(ng-repeat='issue in report.reportData track by $index' ng-class='{"alert-danger": issue.heading === "ERROR", "alert-warning": issue.heading !== "ERROR"}' ng-init='issue.hidden = true;' ng-click='issue.hidden = !issue.hidden;' role='alert')
+  button.close(type='button', data-dismiss='alert', aria-label='Close')
+    span(aria-hidden='true') &times;
+  span.heading {{issue.heading}} -
+  span.description {{issue.description}}
+  p.issue-element.well(ng-class='{hidden: issue.hidden}') {{issue.element.node}}

@@ -18,6 +18,10 @@ body {
     text-transform: capitalize;
 }
 
+.nav-pills {
+    margin-bottom: 2em;
+}
+
 .report-name:hover {
     color: #888;
 }

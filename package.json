@@ -28,6 +28,7 @@
     "errorhandler": "^1.1.1",
     "express": "^4.12.4",
     "express-session": "^1.7.2",
+    "glob": "^5.0.10",
     "jade": "^1.10.0",
     "method-override": "^2.1.2",
     "morgan": "^1.2.2",

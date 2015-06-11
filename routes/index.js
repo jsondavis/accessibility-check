@@ -11,17 +11,33 @@ var accessOpts = {
 };
 
 
-function scrape(url, elem) {
+/**
+ * scrape accepts
+ * url:string
+ * reportLevel:string [optional] 
+ * and uses accessSniff to generate accessibility reports
+ */
+function scrape(url, reportLevel) {
+    // **TODO** 
+    // add functionality to follow links within same folder?
+
     if (url === '') {
         return {};
     } else if (url.indexOf('http://') === -1) {
         var url = 'http://' + url;
     }
-    // request(url, function(error, response, html) {
-    //     if (!error) {
-    //         var $ = cheerio.load(html);
-    //     }
-    // });
+
+    if (url.indexOf('#') !== -1) {
+        url = url.substring(0, url.indexOf('#'));
+    }
+
+    // update report folder and report Level if provided
+    if (typeof reportLevel !== 'undefined' && reportLevel !== '') {
+        accessOpts.reportType = reportLevel;
+    }
+
+    //accessOpts.reportLocation = accessOpts.reportLocation + '/' + url.replace('http://','').replace('https://','');
+
     return accessSniff.start([url], accessOpts);
 }
 

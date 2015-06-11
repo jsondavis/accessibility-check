@@ -9,7 +9,7 @@ access.controller('reportListCtrl', ['$http', '$scope',
         xhr.success(function(d) {
             angular.forEach(d.reports, function(report) {
                 reports.push({name: report});
-            })
+            });
         });
 
     $scope.showreport = function(report) {

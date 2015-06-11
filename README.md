@@ -1,7 +1,12 @@
-# Access Checker
+# Accessibility Checker
 
 Page scraper frontend for [access-sniff](https://www.npmjs.com/package/access-sniff) / [HTML_CodeSniffer]() generated reports.
 
+### Example
+
+![Accesibility Checker Example][logo]
+
+[logo]: ./example6-11.png
 
 ### TODO
 
